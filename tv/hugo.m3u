@@ -32,7 +32,7 @@ http://192.168.254.254:8088/udp/239.93.35.29:6000
 #EXTINF:-1 tvg-name="CCTV15" tvg-logo="https://live.fanmingming.com/tv/CCTV15.png" group-title="央视频道",CCTV-15 音乐
 http://192.168.254.254:8088/udp/239.93.34.103:5140
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://live.fanmingming.com/tv/CCTV16.png" group-title="央视频道",CCTV-16 奥林匹克
-http://192.168.254.254:8088/udp/239.93.60.53:5140
+http://192.168.254.254:8088/udp/239.93.60.54:5140
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://live.fanmingming.com/tv/CCTV17.png" group-title="央视频道",CCTV-17 农业农村
 http://192.168.254.254:8088/udp/239.93.34.92:5140
 #EXTINF:-1 tvg-name="北京卫视" tvg-logo="https://live.fanmingming.com/tv/北京卫视.png" group-title="卫视频道",北京卫视
