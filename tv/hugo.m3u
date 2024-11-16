@@ -107,10 +107,6 @@ http://192.168.254.254:8088/udp/239.93.60.43:5140
 http://192.168.254.254:8088/udp/239.93.60.57:5140
 #EXTINF:-1 tvg-name="康巴卫视" tvg-logo="https://live.fanmingming.com/tv/康巴卫视.png" group-title="卫视频道",康巴卫视
 http://192.168.254.254:8088/udp/239.93.34.41:5140
-#EXTINF:-1 tvg-name="泸州综合" tvg-logo="" group-title="泸州频道",泸州综合
-http://192.168.254.254:8088/udp/239.93.35.241:5140
-#EXTINF:-1 tvg-name="泸州公共" tvg-logo="" group-title="泸州频道",泸州公共
-http://192.168.254.254:8088/udp/239.93.35.242:5140
 #EXTINF:-1 tvg-name="东方财经" tvg-logo="https://live.fanmingming.com/tv/东方财经.png" group-title="特色频道",东方财经
 http://192.168.254.254:8088/udp/239.93.34.249:5140
 #EXTINF:-1 tvg-name="财富天下" tvg-logo="https://live.fanmingming.com/tv/财富天下.png" group-title="特色频道",财富天下
