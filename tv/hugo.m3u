@@ -119,6 +119,9 @@ http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8
 http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
 #EXTINF:-1 tvg-name="中天新聞台" tvg-logo="" group-title="港澳频道",中天新聞台
 http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
+#EXTINF:-1 tvg-name="寰宇新聞台" tvg-logo="" group-title="港澳频道",寰宇新聞台
+http://aktv.top/AKTV/live/aktv/null-9/AKTV.m3u8
+
 
 #EXTINF:-1 tvg-name="泸州综合" tvg-logo="" group-title="本地频道",泸州综合
 http://www.luzhoubs.com/nmip-media/channellive/channel106011/playlist.m3u8
