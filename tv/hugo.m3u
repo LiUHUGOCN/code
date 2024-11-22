@@ -109,36 +109,39 @@ http://192.168.254.254:8088/udp/239.93.60.57:5140
 http://192.168.254.254:8088/udp/239.93.34.41:5140
 
 
-#EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://live.fanmingming.com/tv/凤凰中文.png" group-title="凤凰卫视",凤凰中文
+#EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://live.fanmingming.com/tv/凤凰中文.png" group-title="港澳频道",凤凰中文
 http://aktv.top/AKTV/live/aktv/null-3/AKTV.m3u8
-#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://live.fanmingming.com/tv/凤凰资讯.png" group-title="凤凰卫视",凤凰资讯
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://live.fanmingming.com/tv/凤凰资讯.png" group-title="港澳频道",凤凰资讯
 http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8
-#EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://live.fanmingming.com/tv/凤凰香港.png" group-title="凤凰卫视",凤凰香港
+#EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://live.fanmingming.com/tv/凤凰香港.png" group-title="港澳频道",凤凰香港
 http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8
+#EXTINF:-1 tvg-name="TVBS-新聞台" tvg-logo="https://live.fanmingming.com/tv/TVBS.png" group-title="港澳频道",TVBS-新聞台
+http://aktv.top/AKTV/live/aktv/tvbs-1/AKTV.m3u8
+#EXTINF:-1 tvg-name="中天新聞台" tvg-logo="" group-title="港澳频道",中天新聞台
+http://aktv.top/AKTV/live/aktv/null-12/AKTV.m3u8
 
 #EXTINF:-1 tvg-name="泸州综合" tvg-logo="" group-title="本地频道",泸州综合
 http://www.luzhoubs.com/nmip-media/channellive/channel106011/playlist.m3u8
-#EXTINF:-1 tvg-name="泸州公共" tvg-logo="" group-title="本地频道",泸州公共
-http://www.luzhoubs.com/nmip-media/channellive/channel102221/playlist.m3u8
 #EXTINF:-1 tvg-name="泸州科教" tvg-logo="" group-title="本地频道",泸州科教
 http://www.luzhoubs.com/nmip-media/channellive/channel103074/playlist.m3u8
-#EXTINF:-1 tvg-name="东方财经" tvg-logo="https://live.fanmingming.com/tv/东方财经.png" group-title="特色频道",东方财经
-http://192.168.254.254:8088/udp/239.93.34.249:5140
-#EXTINF:-1 tvg-name="财富天下" tvg-logo="https://live.fanmingming.com/tv/财富天下.png" group-title="特色频道",财富天下
-http://192.168.254.254:8088/udp/239.93.34.116:9136
-#EXTINF:-1 tvg-name="纪实人文" tvg-logo="" group-title="特色频道",纪实人文
-http://192.168.254.254:8088/udp/239.93.34.116:9136
-#EXTINF:-1 tvg-name="地理高清" tvg-logo="" group-title="特色频道",地理高清
-http://192.168.254.254:8088/udp/239.93.34.200:9052
-#EXTINF:-1 tvg-name="军事高清" tvg-logo="" group-title="特色频道",军事高清
-http://192.168.254.254:8088/udp/239.93.34.204:9076
-#EXTINF:-1 tvg-name="少儿天地" tvg-logo="" group-title="特色频道",少儿天地
+
+#EXTINF:-1 tvg-name="少儿天地" tvg-logo="" group-title="主题频道",少儿天地
 http://192.168.254.254:8088/udp/239.93.60.34:5140
-#EXTINF:-1 tvg-name="少儿动画" tvg-logo="" group-title="特色频道",少儿动画
+#EXTINF:-1 tvg-name="少儿动画" tvg-logo="" group-title="主题频道",少儿动画
 http://192.168.254.254:8088/udp/239.93.34.193:9000
-#EXTINF:-1 tvg-name="全球大片" tvg-logo="" group-title="特色频道",全球大片
+#EXTINF:-1 tvg-name="东方财经" tvg-logo="https://live.fanmingming.com/tv/东方财经.png" group-title="主题频道",东方财经
+http://192.168.254.254:8088/udp/239.93.34.249:5140
+#EXTINF:-1 tvg-name="财富天下" tvg-logo="https://live.fanmingming.com/tv/财富天下.png" group-title="主题频道",财富天下
+http://192.168.254.254:8088/udp/239.93.34.116:9136
+#EXTINF:-1 tvg-name="纪实人文" tvg-logo="" group-title="主题频道",纪实人文
+http://192.168.254.254:8088/udp/239.93.34.116:9136
+#EXTINF:-1 tvg-name="地理高清" tvg-logo="" group-title="主题频道",地理高清
+http://192.168.254.254:8088/udp/239.93.34.200:9052
+#EXTINF:-1 tvg-name="军事高清" tvg-logo="" group-title="主题频道",军事高清
+http://192.168.254.254:8088/udp/239.93.34.204:9076
+#EXTINF:-1 tvg-name="全球大片" tvg-logo="" group-title="主题频道",全球大片
 http://192.168.254.254:8088/udp/239.93.34.105:5140
-#EXTINF:-1 tvg-name="华语影院" tvg-logo="" group-title="特色频道",华语影院
+#EXTINF:-1 tvg-name="华语影院" tvg-logo="" group-title="主题频道",华语影院
 http://192.168.254.254:8088/udp/239.93.34.138:5140
 
 
