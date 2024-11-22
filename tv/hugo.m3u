@@ -107,10 +107,18 @@ http://192.168.254.254:8088/udp/239.93.60.43:5140
 http://192.168.254.254:8088/udp/239.93.60.57:5140
 #EXTINF:-1 tvg-name="康巴卫视" tvg-logo="https://live.fanmingming.com/tv/康巴卫视.png" group-title="卫视频道",康巴卫视
 http://192.168.254.254:8088/udp/239.93.34.41:5140
+
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://live.fanmingming.com/tv/凤凰资讯.png" group-title="凤凰卫视",凤凰资讯
 http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8
 #EXTINF:-1 tvg-name="凤凰卫视" tvg-logo="https://live.fanmingming.com/tv/凤凰卫视.png" group-title="凤凰卫视",凤凰卫视
 http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8
+
+#EXTINF:-1 tvg-name="泸州综合" tvg-logo="" group-title="本地频道",泸州综合
+http://www.luzhoubs.com/nmip-media/channellive/channel106011/playlist.m3u8
+#EXTINF:-1 tvg-name="泸州公共" tvg-logo="" group-title="本地频道",泸州公共
+http://www.luzhoubs.com/nmip-media/channellive/channel102221/playlist.m3u8
+#EXTINF:-1 tvg-name="泸州科教" tvg-logo="" group-title="本地频道",泸州科教
+http://www.luzhoubs.com/nmip-media/channellive/channel103074/playlist.m3u8
 #EXTINF:-1 tvg-name="东方财经" tvg-logo="https://live.fanmingming.com/tv/东方财经.png" group-title="特色频道",东方财经
 http://192.168.254.254:8088/udp/239.93.34.249:5140
 #EXTINF:-1 tvg-name="财富天下" tvg-logo="https://live.fanmingming.com/tv/财富天下.png" group-title="特色频道",财富天下
@@ -129,12 +137,7 @@ http://192.168.254.254:8088/udp/239.93.34.193:9000
 http://192.168.254.254:8088/udp/239.93.34.105:5140
 #EXTINF:-1 tvg-name="华语影院" tvg-logo="" group-title="特色频道",华语影院
 http://192.168.254.254:8088/udp/239.93.34.138:5140
-#EXTINF:-1 tvg-name="泸州综合" tvg-logo="" group-title="本地频道",泸州综合
-http://www.luzhoubs.com/nmip-media/channellive/channel106011/playlist.m3u8
-#EXTINF:-1 tvg-name="泸州公共" tvg-logo="" group-title="本地频道",泸州公共
-http://www.luzhoubs.com/nmip-media/channellive/channel102221/playlist.m3u8
-#EXTINF:-1 tvg-name="泸州科教" tvg-logo="" group-title="本地频道",泸州科教
-http://www.luzhoubs.com/nmip-media/channellive/channel103074/playlist.m3u8
+
 
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://live.fanmingming.com/tv/CCTV1.png" group-title="央视频道",CCTV-1 综合
 http://[2409:8087:74d9:21::6]:80/270000001128/9900000001/index.m3u8
