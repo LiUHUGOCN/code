@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>国宝熊猫</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background: #f0f0f0;
+        }
+
+        #player-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9比例 */
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #video-element {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 8px 15px;
+            background: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .control-btn:hover {
+            background: #0056b3;
+        }
+
+        .source-list {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .source-btn {
+            padding: 8px 15px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .source-btn.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .status-bar {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="player-container">
+        <video id="video-element" autoplay></video>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" id="play-pause">▶ 播放/暂停</button>
+        <button class="control-btn" id="fullscreen">⤢ 全屏</button>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        <span class="status-bar" id="status">初始化中...</span>
+    </div>
+
+    <div class="source-list" id="source-list"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script>
+        const video = document.getElementById('video-element');
+        const statusDiv = document.getElementById('status');
+        let hls = null;
+        let currentSourceIndex = 0;
+        let loadTimeout = null;
+
+        // 视频源列表
+        const videoSources = [
+            {name: '牧野', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao15_2/index.m3u8'},
+            {name: '苏琳', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao14_2/index.m3u8'},
+            {name: '潘旺', url: 'https://gcwbndali.v.myalicdn.com/gcwbnd/xiongmao20_2/index.m3u8'},
+            {name: '怡然', url: 'https://gcwbndali.v.myalicdn.com/gcwbnd/xiongmao12_2/index.m3u8'},
+            {name: '春雨吉福', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao18_2/index.m3u8'},
+             {name: '恩恩', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao13_2/index.m3u8'},
+             {name: '一号别墅', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao09_2/index.m3u8'},
+             {name: '六号别墅', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao03_2/index.m3u8'},
+             {name: '幼儿园', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao05_2/index.m3u8'},
+             {name: '母子园', url: 'https://gcwbndcnc.v.wscdns.com/gcwbnd/xiongmao07_2/index.m3u8'}
+        ];
+
+        // 初始化播放器
+        function initPlayer(sourceIndex) {
+            clearTimeout(loadTimeout);
+            currentSourceIndex = sourceIndex;
+            const source = videoSources[sourceIndex];
+            
+            statusDiv.textContent = `正在连接 ${source.name}...`;
+            
+            if (hls) {
+                hls.destroy();
+            }
+
+            // 设置10秒超时检测
+            loadTimeout = setTimeout(() => {
+                statusDiv.textContent = `${source.name} 连接超时，切换线路...`;
+                switchNextSource();
+            }, 20000);
+
+            if (Hls.isSupported()) {
+                hls = new Hls();
+                hls.loadSource(source.url);
+                hls.attachMedia(video);
+                
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    clearTimeout(loadTimeout);
+                    video.play().catch(() => {
+                        statusDiv.textContent = '点击页面开始播放';
+                    });
+                });
+
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    if (data.fatal) {
+                        switchNextSource();
+                    }
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = source.url;
+                video.play().catch(() => {
+                    statusDiv.textContent = '点击页面开始播放';
+                });
+            }
+        }
+
+        // 切换到下一个源
+        function switchNextSource() {
+            currentSourceIndex = (currentSourceIndex + 1) % videoSources.length;
+            document.querySelectorAll('.source-btn')[currentSourceIndex].click();
+        }
+
+        // 创建源按钮
+        function createSourceButtons() {
+            const container = document.getElementById('source-list');
+            videoSources.forEach((source, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'source-btn';
+                btn.textContent = source.name;
+                btn.onclick = () => {
+                    document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    initPlayer(index);
+                };
+                container.appendChild(btn);
+            });
+            // 默认加载第一个源
+            container.querySelector('.source-btn').click();
+        }
+
+        // 播放控制
+        document.getElementById('play-pause').addEventListener('click', () => {
+            video.paused ? video.play() : video.pause();
+        });
+
+        document.getElementById('fullscreen').addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+        });
+
+        document.getElementById('volume').addEventListener('input', (e) => {
+            video.volume = e.target.value;
+        });
+
+        // 初始化
+        createSourceButtons();
+
+        // 处理自动播放限制
+        document.addEventListener('click', function initPlay() {
+            video.play().then(() => {
+                document.removeEventListener('click', initPlay);
+            });
+        }, { once: true });
+
+        // 状态更新
+        video.addEventListener('timeupdate', () => {
+            document.getElementById('status').textContent = 
+                `当前线路: ${videoSources[currentSourceIndex].name} | 音量: ${Math.round(video.volume * 100)}%`;
+        });
+    </script>
+</body>
+</html>
