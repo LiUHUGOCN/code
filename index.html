@@ -56,24 +56,74 @@
         .source-list {
             margin-top: 20px;
             display: grid;
-            grid-template-rows: 40px 40px;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
             gap: 20px;
         }
 
-        .source-btn {
-            padding: 5px;
-            background: #bfbdbd;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            font-family: 'Microsoft Yahei';
-            text-align: center;
-            transition: all 0.3s;
-        }
+       .source-btn {
+    	padding: 5px;
+    	height: 36px;
+    	background: #bfbdbd;
+    	border: none;
+    	border-radius: 4px;
+    	cursor: pointer;
+    	font-size: 14px;  /* 默认字体大小 */
+    	font-weight: bold;
+    	font-family: 'Microsoft Yahei';
+    	transition: all 0.3s;
+    	display: inline-flex;
+    	align-items: center;
+   	 justify-content: center;
+   	 box-sizing: border-box;
 
+    	/* 增加触觉反馈 */
+    	-webkit-tap-highlight-color: transparent;
+	}
+
+	/* 新增中屏适配 */
+	@media (max-width: 1080px) {
+  	  .source-btn {
+      	  height: 42px;
+      	  font-size: 24px;  /* 渐进式增加 */
+   	 }
+	}
+
+	/* 平板和横屏手机 */
+	@media (max-width: 768px) {
+    	.source-btn {
+      	  height: 48px;     /* 符合最小点击尺寸 */
+      	  font-size: 24px;
+       	 padding: 8px;     /* 增加点击区域 */
+  	  }
+	}
+
+	/* 手机竖屏通用适配 */
+	@media (max-width: 480px) {
+  	  .source-btn {
+      	  height: 52px;
+      	  font-size: 26px;
+       	 border-radius: 6px;  /* 更柔和的圆角 */
+   	 }
+	}
+
+	/* 小屏手机专项优化（如iPhone SE） */
+	@media (max-width: 320px) {
+   	 .source-btn {
+     	   height: 56px;
+     	   font-size: 28px;
+      	  padding: 10px;
+ 	   }
+	}
+
+	/* 横向样式适配 */
+	@media (max-height: 480px) {
+ 	   .source-btn {
+        	height: 44px;
+      	  font-size: 26px;
+ 	   }
+	}
+
+        
         .source-btn.active {
             background: #007bff;
             color: white;
@@ -136,6 +186,11 @@
         video.muted = false;
 
         const sources = [
+             { 
+                name: '黑白熊猫', 
+                url: 'https://644-26-2.vod.tv.itc.cn/sohu/v2/VwiwT57Z88nGnNoeOVhQ5JfNhrMLIspIsjAJ1AlJ4mA0VIUOejnQl7ZulxEPbQQSLDGvUXr.mp4?k=RXJk8K&p=jWlvzSxC0prAqmr7qAO349xIWhy4fJNtfF6sfJytWOdOfhdtWG6S0MocWBvS0pviNF2CfMXS0pWcgYeiwm12ZD6Sotxcyp0Gvm1mRDvS0m1cWhoCoMNGRD1S0mbcyp0GY&r=TUldziJCtpCmhWlvsmCUqpw&q=OpCAhW7IWhodRDvswmfCyY2sWhdHfhvs5G6OWGXOfFbS0F2OZh14fFbtfDoURDvOfp&nid=644%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95:GET',
+                type: 'mp4'
+            },
             { 
                 name: '熊猫百科', 
                 url: 'https://baikevideo.cdn.bcebos.com/media/mda-O9qJsczOmPXU0VoI/70e7c4494c555f538c18a31c5c556905.mp4',
